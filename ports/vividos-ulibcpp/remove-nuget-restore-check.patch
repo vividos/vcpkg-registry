@@ -1,0 +1,13 @@
+diff --git a/src/ulib/ulib.vcxproj b/src/ulib/ulib.vcxproj
+index db8ac2d..fffc91b 100644
+--- a/src/ulib/ulib.vcxproj
++++ b/src/ulib/ulib.vcxproj
+@@ -248,7 +248,7 @@
+     <Import Project="..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets')" />
+     <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets')" />
+   </ImportGroup>
+-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
++  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild" Condition="false">
+     <PropertyGroup>
+       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+     </PropertyGroup>
