@@ -1,4 +1,8 @@
 {
   "default": {
+    "vividos-ulibcpp": {
+      "baseline": "4.4.0",
+      "port-version": 0
+    }
   }
 }
