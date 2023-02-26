@@ -8,19 +8,14 @@ vcpkg_from_github(
     PATCHES remove-nuget-restore-check.patch
 )
 
+file(REMOVE ${SOURCE_PATH}/src/nupkg/nuget.exe)
+
 vcpkg_install_msbuild(
-    SOURCE_PATH ${SOURCE_PATH}/src
-    PROJECT_SUBPATH ulib/ulib.vcxproj
+    SOURCE_PATH ${SOURCE_PATH}
+    PROJECT_SUBPATH src/ulib/ulib.vcxproj
+    INCLUDES_SUBPATH src/include
+    LICENSE_SUBPATH LICENSE.md
+    USE_VCPKG_INTEGRATION
     OPTIONS
         "/p:SolutionDir=${SOURCE_PATH}/src/"
 )
-
-vcpkg_copy_pdbs()
-
-file(
-    COPY "${SOURCE_PATH}/src/include/ulib"
-    DESTINATION "${CURRENT_PACKAGES_DIR}/include/"
-    FILES_MATCHING PATTERN "*.hpp"
-)
-
-vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.md")
