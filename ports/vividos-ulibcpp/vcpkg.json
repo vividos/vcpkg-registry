@@ -1,5 +1,16 @@
 {
   "name": "vividos-ulibcpp",
   "version-string": "4.4.0",
-  "description": "UlibCpp is a collection of useful C++ classes that help writing Win32 console, ATL and WTL applications faster."
+  "description": "UlibCpp is a collection of useful C++ classes that help writing Win32 console, ATL and WTL applications faster.",
+  "homepage": "https://github.com/vividos/UlibCpp",
+  "license": "BSD-2-Clause",
+  "supports": "!(uwp | osx | linux)",
+  "dependencies": [
+      "boost-asio",
+      "boost-date-time",
+      {
+        "name": "wtl",
+        "platform": "windows"
+      }
+  ]
 }
