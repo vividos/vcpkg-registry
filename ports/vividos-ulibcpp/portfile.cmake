@@ -1,3 +1,5 @@
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO vividos/UlibCpp
@@ -9,9 +11,16 @@ vcpkg_from_github(
 vcpkg_install_msbuild(
     SOURCE_PATH ${SOURCE_PATH}/src
     PROJECT_SUBPATH ulib/ulib.vcxproj
-    INCLUDES_SUBPATH include/ulib
     OPTIONS
         "/p:SolutionDir=${SOURCE_PATH}/src/"
 )
 
-file(INSTALL "${SOURCE_PATH}/LICENSE.md" DESTINATION "${CURRENT_PACKAGES_DIR}/share/vividos-ulibcpp" RENAME copyright)
+vcpkg_copy_pdbs()
+
+file(
+    COPY "${SOURCE_PATH}/src/include/ulib"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/include/"
+    FILES_MATCHING PATTERN "*.hpp"
+)
+
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.md")
