@@ -3,6 +3,10 @@
 This is my custom vcpkg registry for ports not suitable for the
 [official vcpkg registry](https://github.com/microsoft/vcpkg).
 
+The following custom ports are available:
+
+- [vividos-ulibcpp](ports/vividos-ulibcpp/README.md) The [UlibCpp](https://github.com/vividos/UlibCpp) library
+
 ## Usage
 
 Add a new `vcpkg-configuration.json` file to your project's root directory:
