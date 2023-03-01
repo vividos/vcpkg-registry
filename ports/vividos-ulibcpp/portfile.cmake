@@ -8,7 +8,14 @@ vcpkg_from_github(
     PATCHES
         remove-nuget-restore-check.patch
         replace-solutiondir-in-props.patch
+        runtime-library-property.patch
 )
+
+if(VCPKG_CRT_LINKAGE STREQUAL "static")
+    set(RuntimeLibraryExt "")
+else()
+    set(RuntimeLibraryExt "DLL")
+endif()
 
 file(REMOVE ${SOURCE_PATH}/src/nupkg/nuget.exe)
 
@@ -18,4 +25,6 @@ vcpkg_install_msbuild(
     INCLUDES_SUBPATH src/include
     LICENSE_SUBPATH LICENSE.md
     USE_VCPKG_INTEGRATION
+    OPTIONS_DEBUG "/p:RuntimeLibrary=MultiThreadedDebug${RuntimeLibraryExt}"
+    OPTIONS_RELEASE "/p:RuntimeLibrary=MultiThreaded${RuntimeLibraryExt}"
 )

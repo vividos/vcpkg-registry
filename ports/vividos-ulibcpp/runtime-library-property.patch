@@ -1,0 +1,65 @@
+diff --git a/src/ulib/ulib.vcxproj b/src/ulib/ulib.vcxproj
+index db8ac2d..70e04f6 100644
+--- a/src/ulib/ulib.vcxproj
++++ b/src/ulib/ulib.vcxproj
+@@ -34,24 +34,28 @@
+     <UseDebugLibraries>true</UseDebugLibraries>
+     <PlatformToolset>v143</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
++    <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+     <PlatformToolset>v143</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
++    <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+     <PlatformToolset>v143</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
++    <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+     <PlatformToolset>v143</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
++    <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+@@ -91,6 +95,7 @@
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -102,6 +107,7 @@
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -114,6 +120,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <EnablePREfast>true</EnablePREfast>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -128,6 +135,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <EnablePREfast>true</EnablePREfast>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
