@@ -8,6 +8,9 @@ The following custom ports are available:
 - [vividos-ulibcpp](ports/vividos-ulibcpp/README.md):
   The [UlibCpp](https://github.com/vividos/UlibCpp) library
 
+- [lame-latest-svn](ports/lame-latest-svn/README.md):
+  [LAME](https://lame.sourceforge.io/) library with latest changes from SVN
+
 ## Usage
 
 Add a new `vcpkg-configuration.json` file to your project's root directory:
