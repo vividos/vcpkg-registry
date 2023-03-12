@@ -1,5 +1,9 @@
 {
   "default": {
+    "lame-latest-svn": {
+      "baseline": "3.101-beta-r6507",
+      "port-version": 0
+    },
     "vividos-ulibcpp": {
       "baseline": "4.4.0",
       "port-version": 0
