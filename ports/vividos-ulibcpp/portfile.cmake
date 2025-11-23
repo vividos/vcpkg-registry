@@ -5,6 +5,8 @@ vcpkg_from_github(
     REPO vividos/UlibCpp
     REF version-5.0.0
     SHA512 3a41afdd80e9fe4f21b7605292d2b078acb58c59826bc0ec5693dc02dd34f7d92b646038460a55e4936e1f1e286e44cb488d968fe7f39062f277456a11cfe438
+    PATCHES
+        set-DebugInformationFormat-for-pdbs.patch
 )
 
 if(VCPKG_CRT_LINKAGE STREQUAL "static")

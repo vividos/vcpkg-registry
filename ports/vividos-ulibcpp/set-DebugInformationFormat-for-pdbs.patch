@@ -1,0 +1,12 @@
+diff --git a/src/ulib.props b/src/ulib.props
+index e22c413..34edec0 100644
+--- a/src/ulib.props
++++ b/src/ulib.props
+@@ -22,6 +22,7 @@
+       <DisableSpecificWarnings>26812</DisableSpecificWarnings>
+       <WholeProgramOptimization>false</WholeProgramOptimization>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
++      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+     </ClCompile>
+   </ItemDefinitionGroup>
+   <ItemGroup>
